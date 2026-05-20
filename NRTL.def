@@ -1,0 +1,13 @@
+EXPORTS
+NrtlSetAllocFailHandler
+NrtlAllocateHeap
+NrtlReAllocateHeap
+NrtlFreeHeap
+NrtlFreeLinkedList
+
+NrtlDosPathNameToNtPathName
+
+Nrtl_vsnprintf
+Nrtl_vsnwprintf
+Nrtl_snprintf
+Nrtl_snwprintf

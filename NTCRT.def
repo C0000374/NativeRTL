@@ -1,0 +1,6 @@
+include 'D:\ImpLib-1.9\Src\ImpLib.inc'
+
+implib NTDLL.DLL, _vsnprintf, __vsnprintf, __imp___vsnprintf
+implib NTDLL.DLL, _vsnwprintf, __vsnwprintf, __imp___vsnwprintf
+
+endlib
