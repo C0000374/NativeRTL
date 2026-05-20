@@ -10,17 +10,12 @@
 
 #pragma warning(pop)
 
-#define NRTL_RESOURCE_TYPE_FILE         0x80000000
-#define NRTL_RESOURCE_TYPE_HEAP_MEMORY  0x80000001
-
 typedef
 BOOLEAN
 (STDCALL* PNRTL_ALLOCFAIL_HANDLER) (
     IN UINT32 BlockSize,
     IN PVOID Block OPTIONAL
     );
-
-typedef struct __NRTL_RESOURCES* PNRTL_RESOURCES;
 
 typedef struct __NRTL_ILinkedList NRTL_ILinkedList, * PNRTL_ILinkedList;
 struct __NRTL_ILinkedList {
