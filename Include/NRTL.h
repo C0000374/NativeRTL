@@ -10,7 +10,7 @@
 #pragma warning(disable:4005)
 #define STDCALL	    __stdcall
 #define CDECL       __cdecl
-#define NORETURN    __declspec(noreturn)
+#define NORETURN    __declspec(noreturn) VOID
 #pragma warning(pop)
 
 typedef float FLOAT32, * PFLOAT32;
