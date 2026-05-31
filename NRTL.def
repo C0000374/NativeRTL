@@ -11,3 +11,11 @@ Nrtl_vsnprintf
 Nrtl_vsnwprintf
 Nrtl_snprintf
 Nrtl_snwprintf
+
+NrtlCreateList
+NrtlDestroyList
+NrtlAddElementToList
+NrtlGetListSize
+NrtlGetPtrToListElement
+
+_ftol2
