@@ -15,7 +15,15 @@ Nrtl_snwprintf
 NrtlCreateList
 NrtlDestroyList
 NrtlAddElementToList
+NrtlGetListElementSize
 NrtlGetListSize
 NrtlGetPtrToListElement
 
 _ftol2
+
+NrtlCreateHashMapUstr
+NrtlAddElementToHashMapUstr
+NrtlGetPtrToHashMapUstrElementByIndex
+NrtlGetPtrToHashMapUstrElementByKey
+NrtlGetPtrToHashMapUstrElementByUstr
+NrtlCreateKeyForHashMapUstr

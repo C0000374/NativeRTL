@@ -31,6 +31,16 @@ struct __NRTL_ILinkedList {
     PNRTL_ILinkedList Next;
 };
 
+typedef struct __HASHMAP_USTR_KEY HASHMAP_USTR_KEY, * PHASHMAP_USTR_KEY;
+struct __HASHMAP_USTR_KEY {
+    UNICODE_STRING Key;
+    UINT32 KeyHash; // crc32
+};
+
+//
+// Heap.c
+//
+
 PNRTL_ALLOCFAIL_HANDLER
 STDCALL
 NrtlSetAllocFailHandler(
@@ -64,12 +74,20 @@ NrtlFreeLinkedList(
     IN PNRTL_ILinkedList FirstElement
     );
 
+//
+// PathConv.c
+//
+
 BOOLEAN
 STDCALL
 NrtlDosPathNameToNtPathName(
     IN PCWSTR DosPathName,
     OUT PUNICODE_STRING NtPathName
     );
+
+//
+// Printf.c
+//
 
 INT32
 STDCALL
@@ -107,6 +125,10 @@ Nrtl_snwprintf(
     IN ...
     );
 
+//
+// List.c
+//
+
 BOOLEAN
 STDCALL
 NrtlCreateList(
@@ -129,6 +151,13 @@ NrtlAddElementToList(
 
 BOOLEAN
 STDCALL
+NrtlGetListElementSize(
+    IN PNRTL_LIST List,
+    OUT PUINT32 ElementSize
+    );
+
+BOOLEAN
+STDCALL
 NrtlGetListSize(
     IN PNRTL_LIST List,
     OUT PUINT32 Size
@@ -141,6 +170,60 @@ NrtlGetPtrToListElement(
     IN UINT32 ElementIndex,
     OUT PVOID* Ptr_
     );
+
+//
+// HashMap_Ustr
+//
+
+BOOLEAN
+STDCALL
+NrtlCreateHashMapUstr(
+    IN UINT32 ElementSize,
+    OUT PNRTL_LIST* HashMap
+    );
+
+BOOLEAN
+STDCALL
+NrtlAddElementToHashMapUstr(
+    IN PNRTL_LIST HashMap,
+    IN PUNICODE_STRING Key,
+    IN PVOID Element OPTIONAL
+    );
+
+BOOLEAN
+STDCALL
+NrtlGetPtrToHashMapUstrElementByIndex(
+    IN PNRTL_LIST HashMap,
+    IN UINT32 Index,
+    OUT PVOID* Ptr
+    );
+
+BOOLEAN
+STDCALL
+NrtlGetPtrToHashMapUstrElementByKey(
+    IN PNRTL_LIST HashMap,
+    IN PHASHMAP_USTR_KEY Key,
+    OUT PVOID* Ptr
+    );
+
+BOOLEAN
+STDCALL
+NrtlGetPtrToHashMapUstrElementByUstr(
+    IN PNRTL_LIST HashMap,
+    IN PUNICODE_STRING String,
+    OUT PVOID* Ptr
+    );
+
+BOOLEAN
+STDCALL
+NrtlCreateKeyForHashMapUstr(
+    IN PUNICODE_STRING KeyStr,
+    OUT PHASHMAP_USTR_KEY Key
+    );
+
+//
+// inline
+//
 
 FORCEINLINE
 VOID

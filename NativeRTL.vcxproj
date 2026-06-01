@@ -11,6 +11,7 @@
     <ClInclude Include="Include\NRTLp.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="HashMap_Ustr.c" />
     <ClCompile Include="Heap.c" />
     <ClCompile Include="List.c" />
     <ClCompile Include="Main.c" />
