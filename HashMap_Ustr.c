@@ -132,3 +132,25 @@ NrtlGetPtrToHashMapUstrElementByUstr(
     RtlFreeUnicodeString(&Key.Key);
     return bStatus;
 }
+
+BOOLEAN
+STDCALL
+NrtlDestroyHashMapUstr(
+    IN PNRTL_LIST HashMap
+    )
+{
+    UINT32 Count;
+    UINT32 i;
+    PHASHMAP_USTR_KEY Element;
+
+    NrtlGetListSize(HashMap, &Count);
+
+    for (i = 0; i < Count; i++) {
+
+        NrtlGetPtrToListElement(HashMap, i, &Element);
+        RtlFreeUnicodeString(&Element->Key);
+    }
+
+    NrtlDestroyList(HashMap);
+    return TRUE;
+}

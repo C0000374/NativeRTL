@@ -184,6 +184,12 @@ NrtlCreateHashMapUstr(
 
 BOOLEAN
 STDCALL
+NrtlDestroyHashMapUstr(
+    IN PNRTL_LIST HashMap
+    );
+
+BOOLEAN
+STDCALL
 NrtlAddElementToHashMapUstr(
     IN PNRTL_LIST HashMap,
     IN PUNICODE_STRING Key,
