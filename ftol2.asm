@@ -2,7 +2,8 @@
 ; Copyright (C) C0000374
 ;
 
-.586p
+.686p
+.XMM
 .model flat
 
 .code
@@ -20,5 +21,14 @@ __ftol2:      push  eax
               xor   edx, edx
               pop   ecx
               pop   ecx
+              retn
+
+public __ftol2_sse
+__ftol2_sse:  push      eax
+              push      eax
+              fstp      qword ptr [esp]
+              cvttsd2si eax, qword ptr [esp]
+              pop       ecx
+              pop       ecx
               retn
 end

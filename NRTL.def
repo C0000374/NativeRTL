@@ -25,6 +25,7 @@ NrtlGetListSize
 NrtlGetPtrToListElement
 
 _ftol2
+_ftol2_sse
 
 NrtlCreateHashMapUstr
 NrtlDestroyHashMapUstr
