@@ -354,6 +354,20 @@ CDECL
 operator delete[](
     IN PVOID Block
     );
+
+VOID
+CDECL
+operator delete(
+    IN PVOID Block,
+    IN UINT32 BlockSize
+    );
+
+VOID
+CDECL
+operator delete[](
+    IN PVOID Block,
+    IN UINT32 BlockSize
+    );
 #endif
 
 #endif

@@ -7,8 +7,10 @@ NrtlFreeLinkedList
 ?NrtlSetNewHandler@@YGP6GEIPAX@ZP6GEI0@Z@Z
 ??2@YAPAXI@Z
 ??3@YAXPAX@Z
+??3@YAXPAXI@Z
 ??_U@YAPAXI@Z
 ??_V@YAXPAX@Z
+??_V@YAXPAXI@Z
 
 NrtlDosPathNameToNtPathName
 
