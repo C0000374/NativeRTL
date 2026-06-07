@@ -4,6 +4,11 @@ NrtlAllocateHeap
 NrtlReAllocateHeap
 NrtlFreeHeap
 NrtlFreeLinkedList
+?NrtlSetNewHandler@@YGP6GEIPAX@ZP6GEI0@Z@Z
+??2@YAPAXI@Z
+??3@YAXPAX@Z
+??_U@YAPAXI@Z
+??_V@YAXPAX@Z
 
 NrtlDosPathNameToNtPathName
 

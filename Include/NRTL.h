@@ -6,6 +6,10 @@
 #define __NRTL_h__
 #include <NTExp.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #pragma warning(push)
 #pragma warning(disable:4005)
 #define STDCALL	    __stdcall
@@ -317,5 +321,39 @@ x86CopyMemory(
               pop   edi
     }
 }
+
+#ifdef __cplusplus
+}
+
+PNRTL_ALLOCFAIL_HANDLER
+STDCALL
+NrtlSetNewHandler(
+    IN PNRTL_ALLOCFAIL_HANDLER Handler
+    );
+
+PVOID
+CDECL
+operator new(
+    IN UINT32 BlockSize
+    );
+
+PVOID
+CDECL
+operator new[](
+    IN UINT32 BlockSize
+    );
+
+VOID
+CDECL
+operator delete(
+    IN PVOID Block
+    );
+
+VOID
+CDECL
+operator delete[](
+    IN PVOID Block
+    );
+#endif
 
 #endif
